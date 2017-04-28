@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     GameObject player;
 
     public float speed = 1.0f;
+    public float aimSpeed = .25f;
+    public float maxMoveSpeed = 1.0f;
 
-    bool isAiming = false;
+    public bool isAiming = false;
     bool hasMoved = false;
 
+    public GameObject crosshair;
 
     // Use this for initialization
     void Start()
     {
-
+        crosshair.SetActive(false);
 
 
     }
@@ -25,12 +28,12 @@ public class Player_Movement : MonoBehaviour
     {
         
         float translationUD = Input.GetAxis("Vertical");
-        if (translationUD >= 1.0f && hasMoved == false)
+        if (translationUD >= 1.0f && hasMoved == false && !isAiming)
         {
             hasMoved = true;
             MoveUp();
         }
-        if (translationUD <= -1.0f && hasMoved == false)
+        if (translationUD <= -1.0f && hasMoved == false && !isAiming)
         {
             hasMoved = true;
             MoveDown();
@@ -38,6 +41,14 @@ public class Player_Movement : MonoBehaviour
         if (translationUD < .01f && translationUD > -.01f)
         {
             hasMoved = false;
+        }
+        if (isAiming)
+        {
+            speed = aimSpeed;
+        }
+        else
+        {
+            speed = maxMoveSpeed;
         }
         Debug.Log(translationUD);
         float translationLR = Input.GetAxis("Horizontal") * speed;
@@ -50,6 +61,10 @@ public class Player_Movement : MonoBehaviour
         {
             isAiming = !isAiming;
             Debug.Log("am i aiming?" + " " + isAiming);
+            if (isAiming)
+                crosshair.SetActive(true);
+            else
+                crosshair.SetActive(false);
         }
     }
 
