@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour
 
         transform.Translate(translationLR, 0, 0);
 
-        if (Input.GetKeyDown("joystick button 4"))
+        if (Input.GetKeyDown("joystick button 4")||Input.GetMouseButtonDown(1))
         {
             isAiming = !isAiming;
             Debug.Log("am i aiming?" + " " + isAiming);
