@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        crosshair.SetActive(false);
+        //crosshair.SetActive(false);
 
 
     }
@@ -50,7 +50,7 @@ public class PlayerInput : MonoBehaviour
         {
             speed = maxMoveSpeed;
         }
-        Debug.Log(translationUD);
+        //Debug.Log(translationUD);
         float translationLR = Input.GetAxis("Horizontal") * speed;
         //translationUD *= Time.deltaTime;
         translationLR *= Time.deltaTime;
@@ -61,10 +61,10 @@ public class PlayerInput : MonoBehaviour
         {
             isAiming = !isAiming;
             Debug.Log("am i aiming?" + " " + isAiming);
-            if (isAiming)
-                crosshair.SetActive(true);
-            else
-                crosshair.SetActive(false);
+            //if (isAiming)
+            //    crosshair.SetActive(true);
+            //else
+            //    crosshair.SetActive(false);
         }
     }
 
