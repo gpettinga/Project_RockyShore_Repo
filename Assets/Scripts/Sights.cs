@@ -31,7 +31,7 @@ public class Sights : MonoBehaviour
         if (pI.isAiming == true)
         {
             AimDownSights();
-            Debug.Log("aim down sights");
+            //Debug.Log("aim down sights");
         }
         else if (pI.isAiming == false)
         {

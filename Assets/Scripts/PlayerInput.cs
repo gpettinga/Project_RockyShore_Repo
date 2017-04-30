@@ -60,7 +60,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown("joystick button 4")||Input.GetMouseButtonDown(1))
         {
             isAiming = !isAiming;
-            Debug.Log("am i aiming?" + " " + isAiming);
+            //Debug.Log("am i aiming?" + " " + isAiming);
             //if (isAiming)
             //    crosshair.SetActive(true);
             //else
