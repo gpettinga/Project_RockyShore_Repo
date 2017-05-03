@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class KeyboardInput : MonoBehaviour
 {
     GameObject player;
 
@@ -26,8 +26,8 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        float translationUD = Input.GetAxis("Vertical");
+
+        float translationUD = Input.GetAxis("Key_Vertical");
         if (translationUD >= 1.0f && hasMoved == false && !isAiming)
         {
             hasMoved = true;
@@ -51,13 +51,13 @@ public class PlayerInput : MonoBehaviour
             speed = maxMoveSpeed;
         }
         //Debug.Log(translationUD);
-        float translationLR = Input.GetAxis("Horizontal") * speed;
+        float translationLR = Input.GetAxis("Key_Horizontal") * speed;
         //translationUD *= Time.deltaTime;
         translationLR *= Time.deltaTime;
 
         transform.Translate(translationLR, 0, 0);
-          
-        if (Input.GetKeyDown("joystick button 4")||Input.GetMouseButtonDown(1))
+
+        if (Input.GetKeyDown("joystick button 4") || Input.GetMouseButtonDown(1))
         {
             isAiming = !isAiming;
             //Debug.Log("am i aiming?" + " " + isAiming);

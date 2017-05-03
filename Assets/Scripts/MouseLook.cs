@@ -15,6 +15,7 @@ public class MouseLook : MonoBehaviour
     GameObject character;
 
     PlayerInput pI;
+    KeyboardInput kI;
 
     public GameObject rifle;
 
@@ -25,18 +26,19 @@ public class MouseLook : MonoBehaviour
         sensitivity = maxSensitivity;
         Cursor.lockState = CursorLockMode.Locked;
         pI = GetComponentInParent<PlayerInput>();
+        kI = GetComponentInParent<KeyboardInput>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (pI.isAiming == true)
+        if (pI.isAiming == true||kI.isAiming == true)
         {
             //Debug.Log("is aiming ?" + pI.isAiming);
             sensitivity = minSensitivity;
             rifle.gameObject.transform.parent = this.gameObject.transform;
         }
-        else if(pI.isAiming == false)
+        else if(pI.isAiming == false || kI.isAiming == false)
         {
             sensitivity = maxSensitivity;
             rifle.gameObject.transform.parent = character.gameObject.transform;

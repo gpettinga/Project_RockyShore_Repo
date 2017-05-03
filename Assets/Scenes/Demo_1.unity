@@ -670,6 +670,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 697851549}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &731710439 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1338398279592230, guid: 3596a43ad39c12945ac845713deb349f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1489633339}
+--- !u!114 &731710443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 731710439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549006948124dca4e8457425c5239a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  aimSpeed: 0.25
+  maxMoveSpeed: 1
+  isAiming: 0
+  crosshair: {fileID: 616125911}
 --- !u!1001 &739419995
 Prefab:
   m_ObjectHideFlags: 0
@@ -1793,6 +1814,16 @@ Prefab:
     - target: {fileID: 20169396603621004, guid: 3596a43ad39c12945ac845713deb349f,
         type: 2}
       propertyPath: m_Depth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114682089825200822, guid: 3596a43ad39c12945ac845713deb349f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463845115715118, guid: 3596a43ad39c12945ac845713deb349f,
+        type: 2}
+      propertyPath: controllerExists
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

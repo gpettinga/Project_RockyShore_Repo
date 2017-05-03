@@ -14,13 +14,16 @@ public class Sights : MonoBehaviour
 
     //public Vector3 sightStart;
     //public Vector3 downSights;
-    
+    public bool controllerExists;
     PlayerInput pI;
-
+    KeyboardInput kI;
     // Use this for initialization
     void Start()
     {
+        if(controllerExists)
         pI = GetComponentInParent<PlayerInput>();
+        else
+        kI = GetComponentInParent<KeyboardInput>();
         //sightStart = sightBox.transform.position;
         //downSights = downSightLocation.transform.position;
     }
@@ -28,16 +31,33 @@ public class Sights : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pI.isAiming == true)
+        if (controllerExists)
         {
-            AimDownSights();
-            //Debug.Log("aim down sights");
-        }
-        else if (pI.isAiming == false)
-        {
-            NormalView();
-            //Debug.Log("nomral view");
+            if (pI.isAiming == true)
+            {
+                AimDownSights();
+                //Debug.Log("aim down sights");
+            }
+            else if (pI.isAiming == false)
+            {
+                NormalView();
+                //Debug.Log("nomral view");
 
+            }
+        }
+        else
+        {
+            if (kI.isAiming == true)
+            {
+                AimDownSights();
+                //Debug.Log("aim down sights");
+            }
+            else if (kI.isAiming == false)
+            {
+                NormalView();
+                //Debug.Log("nomral view");
+
+            }
         }
     }
 
